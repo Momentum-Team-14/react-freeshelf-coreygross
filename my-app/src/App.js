@@ -115,24 +115,10 @@ const Books = ({ title, author, url, shortDescription, coverImageUrl, publisher,
     const imgNotFound = 'https://islandpress.org/sites/default/files/default_book_cover_2015.jpg'
 
     
-// class Appstart extends useState {
-//         constructor(props) {
-//             super(props);
-//             this.state = {
-//                 defaultImage: 
-//                 'https://historyexplorer.si.edu/sites/default/files/book-348.jpg',
-//             };
-//         };
-//         replaceImage = (error) => {
-//             error.target.src = this.state.defaultImage
-//         }
-//     }
-    // render(); {
         return (
             <div>
                 <img src={coverImageUrl} alt="coverimage" style={{height: '150px', width: '100px', float: 'right', marginRight:'50px'}} 
                 onError={e => { e.currentTarget.src = imgNotFound}
-                // onError={this.replaceImage}
                 }/>
                 <h1 style={{ paddingTop: '10px' }}>{title}</h1>
                 <p><strong>Author: {author}</strong></p>
@@ -140,10 +126,10 @@ const Books = ({ title, author, url, shortDescription, coverImageUrl, publisher,
                 <button onClick={() => handleClick()} style={{ borderRadius:'10px'}}>
                     {expanded ? 'Show Less' : 'Show More'} Details</button>
                 {expanded ? <p>
-                    <p><strong>URL:</strong> <a href={url}>{url}</a></p>
-                    <p><strong>Publisher:</strong> {publisher}</p>
-                    <p><strong>Publication Date:</strong> {publicationDate}</p>
-                    <p><strong>Full Details:</strong> {detailedDescription}</p>
+                    {url ? <p><strong>URL:</strong> <a href={url}>{url}</a></p> : ''}
+                    {publisher ? <p><strong>Publisher:</strong> {publisher}</p> : ''}
+                    {publicationDate ? <p><strong>Publication Date:</strong> {publicationDate}</p> : ''}
+                    {detailedDescription ? <p><strong>Full Details:</strong> {detailedDescription}</p> : ''}
                     </p>: ''}
                     <hr></hr>
             
