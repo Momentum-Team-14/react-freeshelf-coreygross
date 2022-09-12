@@ -130,7 +130,7 @@ const Books = ({ title, author, url, shortDescription, coverImageUrl, publisher,
     // render(); {
         return (
             <div>
-                <img src={coverImageUrl} alt="coverimage" style={{height: '150px', width: '150lx', float: 'right'}} 
+                <img src={coverImageUrl} alt="coverimage" style={{height: '150px', width: '100px', float: 'right', marginRight:'50px'}} 
                 onError={e => { e.currentTarget.src = imgNotFound}
                 // onError={this.replaceImage}
                 }/>
@@ -145,6 +145,7 @@ const Books = ({ title, author, url, shortDescription, coverImageUrl, publisher,
                     <p><strong>Publication Date:</strong> {publicationDate}</p>
                     <p><strong>Full Details:</strong> {detailedDescription}</p>
                     </p>: ''}
+                    <hr></hr>
             
             </div>
         )
